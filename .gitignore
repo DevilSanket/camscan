@@ -1,0 +1,11 @@
+.gradle/
+.idea/
+local.properties
+**/build/
+*.iml
+captures/
+*.jks
+*.keystore
+# Large APK files (exceed GitHub 100MB limit)
+deliverables/*.apk
+deliverables/archive/**/*.apk

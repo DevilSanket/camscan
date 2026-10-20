@@ -1,0 +1,27 @@
+Folio Scan 1.1.0 / versionCode 2, 15 October 2026
+Installed universal APK SHA-256:
+33e0cef0aec4ec8a16e7a9c22763b6c19074ffff2c9ee6efcc863c62fc770ae2
+
+Device: owned folio-scan-test Android 14/API 34 x86_64 emulator, Pixel 6 display.
+Camera: Android emulator virtualscene, synthetic furnished room.
+
+Observed manually through adb screenshots and UI hierarchy:
+- CameraX preview started and streamed the virtual room.
+- Live contour overlay followed scene changes and remained within preview content.
+- Auto capture was disabled to inspect the overlay.
+- Enabling Auto capture caused capture without tapping Capture page.
+- Result reached Adjust page with Page detected and Apply scan.
+- The selected contour was a room structure, not a paper document. This is a
+  capture/integration check; it does not establish document recognition accuracy.
+
+Import:
+- Import photo opened Android DocumentsUI.
+- Selected the generated folio-sample.jpg from Downloads.
+- Returned to Adjust page with Page detected and four page corner handles.
+- Apply scan reached Your scan, Auto color applied, and Save scan.
+
+Evidence: screenshots/camera-1.1.png, camera-capture-1.1.png,
+import-crop-1.1.png, import-auto-color-1.1.png.
+adb logcat -d -b crash produced an empty camera-import-crash-log.txt.
+
+No physical phone, physical camera document, or customer photograph was tested.
